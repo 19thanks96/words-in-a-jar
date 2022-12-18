@@ -3,7 +3,7 @@ var area = document.querySelector('#textplace');
 var returnResult = document.querySelector("#result");
 var previous = '';
 var usedWords = [];
-var letterFirstа = [ 'абажур', 'абонемент', 'абрикос', 'авоська', 'автобус', 'автомобиль', 'агрегат', 'адамант', 'азбука', 'аист', 'аквамарин', 'акварель', 'аквариум', 'аккумулятор', 'аксессуар', 'алкоголь', 'алмаз', 'альбом', 'альманах', 'алюминий', 'амулет', 'амуниция', 'амфетамин', 'амфибия', 'ананас', 'анкета', 'апельсин', 'аппарат', 'аптечка', 'арбуз', 'аркан', 'арт-объект', 'артерия', 'артефакт', 'архив', 'астероид', 'асфальт', 'атом', 'аура', 'афродизиак', 'аэрозоль'];
+var letterFirstа = [  'атом', 'аура', 'афродизиак',];
 
 
 
@@ -22,10 +22,19 @@ function step() {
             area.value = "";
             console.log(previous);
             let index = letterFirstа.indexOf(word);
-            console.log(index);
             letterFirstа.splice(index, 1);
+            console.log(index);
             console.log(usedWords);
             console.log(letterFirstа);
+            
+            var robot = letterFirstа.find(el => el.length < word.length+2);
+            if (robot == undefined) {
+                document.write("GAME OVeR");
+            }
+            console.log(robot);
+            returnResult.innerHTML += robot + "<br>";
+            let wordrobot = letterFirstа.indexOf(robot);
+            letterFirstа.splice(wordrobot, 1);
             }
     else {
         nope(area);
