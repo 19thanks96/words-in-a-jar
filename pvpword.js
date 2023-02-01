@@ -1,18 +1,17 @@
+let valuePlayer = 0;
+let valueSecondPlayer = 0;
+let area = document.querySelector('#textplace');
+let returnResult = document.querySelector("#result");
+let previous = [];
+let stepСounter = 0;
 
-export function pvpword() { 
-  alert('xxx');
-  //let valueRobot = 0;
-  //let valueRobot = 0;
-  let area = document.querySelector('#textplace');
-  let returnResult = document.querySelector("#result");
-  let previous = [];
   // music
   function play() {
   let audio = new Audio('out.mp3');
   audio.play();
   document.querySelector('#sound').src="sound.png";
-
   }
+
   let letterFirstа = ['абажур', 'абонемент', 'абрикос', 'авоська', 'агрегат', 'адамант', 'аерозоль', 'азбука', 'аквамарин', 'акварель', 'акваріум', 'аксесуар', 'акумулятор', 'алкоголь', 'алмаз', 'альбом', 'альманах', 'алюміній', 'амулет', 'амуніція', 'амфетамін', 'амфібія', 'ананас', 'анкета', 'апарат', 'апельсин', 'аптечка', 'аркан', 'арт-обєкт', 'артерія', 'артефакт', 'архів', 'астероїд', 'асфальт', 'атом', 'аура', 'афродизіак',];
   let letterFirstб = ['бабло', 'багаж', 'багатство', 'банан', 'банер', 'баночка', 'барабан', 'батарейка', 'батарея', 'батіг', 'бейдж', 'бензин', 'бере', 'бетон', 'бирка', 'бланк', 'блискітки', 'блокнот', 'болт', 'бомба', 'Бор', 'браслет', 'брова', 'бронь', 'брошка', 'брошура', 'бруд', 'брус', 'брюки', 'будильник', 'буква', 'буквар', 'букет', 'буклет', 'булка', 'булочка', 'булыжник', 'бумеранг', 'бурштин', 'бурян', 'буси', 'бутерброд', 'бутон', 'бухло', 'бюджет', 'бюлетень', 'бюст', 'бюстгальтер', 'Біблія', 'біжутерія', 'білизна', 'білка', 'біографія', 'бісер',];
   let letterFirstв = ['вага', 'вакцина', 'Вал', 'валюта', 'вечеря', 'взуття', 'виграш', 'видобуток', 'виділення', 'вино', 'випаровування', 'виплата', 'випічка', 'виріб', 'вихованець', 'вихор', 'вихідник', 'вода', 'волос', 'воронка', 'вугілля', 'вузол', 'вулик', 'вуха', 'вухо', 'відвар', 'відкат', 'відходи', 'віза', 'вірш', 'вітамін', 'вішалка',];
@@ -31,7 +30,7 @@ export function pvpword() {
   let letterFirstм = ['магазин', 'магніт', 'мазь', 'майка', 'макарони', 'малина', 'малюнок', 'мантія', 'марихуана', 'мармур', 'маска', 'масло', 'мед', 'медуза', 'мембрана', 'менструація', 'мережі', 'мерка', 'мерч', 'метелик', 'мило', 'миша', 'мобильник', 'мова', 'мозок', 'мозоль', 'молекула', 'молюск', 'монета', 'морепродукт', 'морковка', 'морозиво', 'мотузка', 'мох', 'мочалка', 'мочі', 'мошонка', 'мука', 'мундир', 'мурашка', 'мурашник', 'муха', 'мякоть', 'мясо', 'мяч', 'мікроб', 'мікрофон', 'мірило', 'мішок',];
   let letterFirstн = ['навушник', 'надра', 'нажива', 'наказ', 'напій', 'нарцис', 'нафта', 'нерви', 'нитка', 'нота', 'ніж', 'ніс', 'ніштяк',];
   let letterFirstо = ['обгортка', 'оберіг', 'облицьовування', 'оболонка', 'обід', 'овощ', 'одяг', 'ожина', 'окови', 'окурок', 'олівець', 'оплата', 'орган', 'осад', 'останки', 'отрута', 'оцет', 'очі',];
-  let letterFirstп = ['пакет', 'палець', 'палиця', 'панчоха', 'папір', 'паразит', 'пастка', 'пелюстка', 'пенал', 'Пензель', 'перли', 'перлина', 'пиво', 'пил', 'писка', 'план', 'пластівці', 'плата', 'платіж', 'пляшка', 'плід', 'повітря', 'подарунок', 'податок', 'подушка', 'попа', 'порцеляна', 'прапор', 'премія', 'препарат', 'протокол', 'птах', 'пухлина', 'підробка', 'підручник', 'пісок',];
+  let letterFirstп = ['пакет', 'палець', 'палиця', 'путін', 'панчоха', 'папір', 'паразит', 'пастка', 'пелюстка', 'пенал', 'Пензель', 'перли', 'перлина', 'пиво', 'пил', 'писка', 'план', 'пластівці', 'плата', 'платіж', 'пляшка', 'плід', 'повітря', 'подарунок', 'податок', 'подушка', 'попа', 'порцеляна', 'прапор', 'премія', 'препарат', 'протокол', 'птах', 'пухлина', 'підробка', 'підручник', 'пісок',];
   let letterFirstр = ['радіація', 'радіо', 'рама', 'рамен', 'рамка', 'рахунок', 'рейдер', 'ремінь', 'речовина', 'реєстр', 'риба', 'робка', 'родимка', 'розетка', 'розєм', 'ромашка', 'роса', 'роутер', 'рукопис', 'рукоятка', 'рулон', 'рюкзак', 'рюмка', 'ріг', 'рідина', 'річ',];
   let letterFirstс = ['салют', 'світильник', 'свічка', 'сертифікат', 'серце', 'сеча', 'сигарета', 'сир', 'сироп', 'сиська', 'словник', 'сльоза', 'смарагд', 'смартфон', 'сніг', 'сніжинка', 'сорочка', 'сосок', 'спадщина', 'справа', 'спідниця', 'срібло', 'стаття', 'стегна', 'стик', 'струм', 'стріли', 'стрінги', 'субсидія', 'сувенір', 'судина', 'сумка', 'суміш', 'сфера', 'схема', 'схованка', 'сюрприз', 'сік', 'сіль',];
   let letterFirstт = ['таблетка', 'талон', 'талісман', 'тапки', 'тарган', 'тарілка', 'тварина', 'телеграма', 'телефон', 'тент', 'термометр', 'тертка', 'тест', 'тесто', 'тирамісу', 'токсин', 'толстовка', 'топаз', 'топік', 'тост', 'тотем', 'трава', 'трекер', 'трикотаж', 'трофей', 'троянда', 'трубка', 'трубочка', 'труси', 'трутень', 'тумблер', 'туфля', 'тюбик', 'тюльпан', 'тютюн', 'тінь',];
@@ -48,13 +47,176 @@ export function pvpword() {
   // click on the button start examination word
   document.addEventListener("keydown", handleKeyDown);
   function handleKeyDown (event) {
-    console.log (event.key);
     if (event.key === " ") {
       step();
-      console.log("empry");
     } else if (event.key === "Enter") {
       step();
     } 
   }
-  // start examination word
+
+function step() {
+  var word = area.value;
+  stepСounter += 1;
+  if(stepСounter === 3) {
+    stepСounter = 1;
+  }
+  
+  if(letterFirstа.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstа);
+  } else if (letterFirstб.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstб);
+  } else if (letterFirstв.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstв);
+  } else if (letterFirstг.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstг);
+  } else if (letterFirstд.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstд);
+  } else if (letterFirstд.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstд);
+  } else if (letterFirstе.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstе);
+  } else if (letterFirstє.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstє);
+  } else if (letterFirstж.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstж);
+  } else if (letterFirstз.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstз);
+  } else if (letterFirstи.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstи);
+  } else if (letterFirstі.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstі);
+  } else if (letterFirstї.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstї);
+  } else if (letterFirstй.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstй);
+  } else if (letterFirstк.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstк);
+  } else if (letterFirstл.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstл);
+  } else if (letterFirstм.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstм);
+  } else if (letterFirstн.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstн);
+  } else if (letterFirstо.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstо);
+  } else if (letterFirstп.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstп);
+  } else if (letterFirstр.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstр);
+  } else if (letterFirstс.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstс);
+  } else if (letterFirstт.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstт);
+  } else if (letterFirstу.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstу);
+  } else if (letterFirstф.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstф);
+  } else if (letterFirstх.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstх);
+  } else if (letterFirstц.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstц);
+  } else if (letterFirstч.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstч);
+  } else if (letterFirstш.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstш);
+  } else if (letterFirstщ.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstщ);
+  } else if (letterFirstю.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstю);
+  } else if (letterFirstя.includes(word)) {
+    writeWord(word);
+    emptyField(word);
+    deletesValueArray(word, letterFirstя);
+  } else {
+    wrong(area);
+  }
+}
+
+function writeWord(word) {
+  if (stepСounter === 1) {
+  valuePlayer += word.length;
+  document.querySelector('#stars').innerHTML = valuePlayer;
+  } else if (stepСounter === 2)  {
+    valueSecondPlayer += word.length;
+    document.querySelector('#scores').innerHTML = valueSecondPlayer;
+  } 
+}
+
+function emptyField(word) {
+  returnResult.innerHTML += word + "<br>";
+  previous += word + ",";
+  area.placeholder = "мышь";
+  area.value = "";
+}
+
+function deletesValueArray(word, arrays) {
+  let valueArray = arrays.indexOf(word);
+  arrays.splice(valueArray, 1);
+}
+
+function wrong(area) {
+area.value = "";
+area.placeholder = "Краще б пупкіна спробував би...";
 }
