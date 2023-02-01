@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ukr">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Game of jar</title>
+</head>
+<body>
+<a href="/#/" class="back-button">
+    <img class="back-button-icon" src="back-button-icon.png">
+    </a>
+
+<div href="ukr.html" onclick="whoChecked()"  id="full__black">
+    <h2 class="preName">Оберіть режим гри:</h2>
+      <h3  class="first__class">Гравець проти гравця.</h3>
+        <div><input id="one" type="radio" name="words" value="allWordsPvP">Усі слова</input></div>
+        <div><input id="two" type="radio" name="words" value="onlyFirstLettersPvp">По першим буквам</input></div>
+      <br>
+      <h3 class="second__class">Гравець проти бота.</h3>
+        <div><input id="three" type="radio" name="words" value="allWordsPvE">Усі слова</input></div>
+        <div><input id="four" type="radio" name="words" value="onlyFirstLettersPve">По першим буквам</input></div>
+</div>
+<script>
+    let one = document.querySelector("#one");
+    let two = document.querySelector("#two");
+    let three = document.querySelector("#three");
+    let four = document.querySelector("#four");
+
+    function whoChecked() {
+        console.log('yeap');
+    if(one.checked) {
+        console.log(one);
+        window.open('ukr.html','_self','');
+        //document.querySelector('#full_black').href = 'pvpword.html';
+    } else if (two.checked) {
+        console.log(two);
+        window.open('ukr.html','_self','');
+        //document.querySelector('#full_black').href = 'pvpletter.html';
+    } else if (three.checked) {
+        console.log(three);
+        window.open('ukr.html','_self','');
+        //document.querySelector('#full_black').href = 'pveword.html';
+    } else if (four.checked) {
+        console.log(four);
+        window.open('ukr.html','_self','');
+        //document.querySelector('#full_black').href = 'pveletter.html';
+    }
+}
+</script>
+</body>
+</html>

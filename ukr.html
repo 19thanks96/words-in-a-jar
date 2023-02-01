@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ukr">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Game of jar</title>
+</head>
+<body>
+  <a href="/#/" class="back-button">
+    <img class="back-button-icon" src="back-button-icon.png">
+    </a>
+  <div class="up"></div>
+  <div onclick="derivationWords()" id="stars">0</div>
+  <div onclick="derivationWords()" id="scores">0</div>
+<button class="music" onclick="play()"><img id="sound" src="noSound.jpg" height="10vw" alt="#"></button>
+<div class="text">Що влізе у трьолітрову банку?</div> 
+<div class="flex"><div class="flex1"><input id="textplace" placeholder="мышь" pattern = "[a-z]" required></div>
+<div class="flex2"><button id="steps"  onclick="step()">check</button></div></div>
+<!--<div class="img"><img src="image.webp" class="banka" height="400vw" alt="#"></div>-->
+<div id="result"></div>
+<footer id="footer">2023</footer>
+<style>
+  #full_black{
+    display: none;
+  }
+</style>
+<script type="module">
+  import {pvpword} from './pvpword.js';
+let one = document.querySelector("#one");
+        let two = document.querySelector("#two");
+        let three = document.querySelector("#three");
+        let four = document.querySelector("#four");
+        let footer = document.querySelector("#footer")
+        let scripts = footer.nextSibling.nextSibling;
+
+        function whoChecked () {
+            console.log('yeap');
+        if(one.checked) {
+            console.log(one);
+            document.querySelector('#full__black').style.display = 'none';
+            pvpword();
+        } else if (two.checked) {
+            console.log(two);
+            document.querySelector('#full__black').style.display = 'none';
+            console.log(footer.nextSibling);
+            scripts.src = 'pvpletter.js';
+        } else if (three.checked) {
+            console.log(three);
+            document.querySelector('#full__black').style.display = 'none';
+            scripts.src = 'pveword.js';
+        } else if (four.checked) {
+            console.log(four);
+            document.querySelector('#full__black').style.display = 'none';
+            scripts.src = 'pveletter.js';
+        }
+    }
+</script>
+</body>
+</html>

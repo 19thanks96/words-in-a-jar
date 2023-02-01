@@ -1,27 +1,179 @@
+
+a.back-button{
+    z-index: 4;
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 14px;
+    left: 14px;
+    top: 14px;
+    opacity: 0.7;
+    
+}
+.back-button-icon{
+  height: var(--font-size);
+  border: 1px solid #D0E0F1;
+  
+}
+
 .img{
   float: left;
-}
+  opacity: 0.7;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 
+}
+.fleximg{
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 0 0 4vw;
+}
 body{
   margin: 0;
-}
-input{
-  width: 400px;
+  height: 100vh;
+    background-size: 50px 50px;
+    background-image:
+      linear-gradient(to right, grey 1px, transparent 1px),
+      linear-gradient(to bottom, grey 1px, transparent 1px);
+      --font-size: 1.2rem;
+  /*background-image: url(bg-fon.jpg);
+  background-repeat: repeat;;
+  background-position: center center;
+  background-attachment: fixed
+  background-size: 100% ;*/
+
 }
 
+@font-face {
+	font-family: Lobster;
+	src: url('Lobster/Lobster-Regular.ttf');
+}
+@font-face {
+	font-family: Pacifico;
+	src: url('Pacifico/Pacifico-Regular.ttf');
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.music{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  opacity: 0.7;
+  border-width: 0px;
+}
+
+#sound{
+  opacity: 0.9;
+}
+
+.flex1{}
+.flex2{
+  margin: 6.5px 0 0 0;
+}
+
+/*input{
+  width: 60vw;
+  margin: 1vw;
+  opacity: 0.8;
+}
+*/
 .up{
   
   top: 0px;
   right: 0px;
   height: 50px;
   width: 100%;
-  background-color: aqua;
+  background-color: rgb(51 144 236 / 60%) ;
   margin-bottom: 20px;
 }
 
 #stars{
   position: absolute;
-  top: 0;
+  bottom: 13px;
+  left: 24px;
+  
+  font-family: Pacifico;
+  z-index: 2;
+}
+
+#scores{
+  position: absolute;
+  bottom: 13px;
+  right: 24px;
+  font-family: Pacifico;
+  z-index: 2;
+}
+
+.text{
+  position: absolute;
+  top: 14px;
+  left: 41vw;
+  font-family: Lobster;
+  /*font-family: 'Courier New', Courier, monospace;*/
+}
+
+#result{
+  font-family: Pacifico;
+  height: 8vh;
+  display: flex;
+  margin: 0 0 0 2vw;
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .text{
+    display: none;
+  }
+}
+
+footer {
+  position: fixed;
   left: 0;
-  height: 50px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background-position-x: center;
+  background: rgba(229, 255, 0, 0.671);
+  color: white;
+  text-align: center;
+}
+
+
+#full__black{
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
+  position: absolute;
+  background:black;
+  z-index: 3;
+  
+  text-align: center;
+}
+
+
+.preName{
+  margin-top: 1%;
+  color: rgb(231, 228, 34);
+}
+
+.first__class{
+  padding: auto;
+  margin: 20% 0 1% 0;
+  color: rgb(231, 228, 34);
+}
+
+.second__class{
+  color: rgb(231, 228, 34);
+}
+
+div > div{
+  color: rgb(231, 228, 34);
 }

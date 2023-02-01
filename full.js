@@ -33,21 +33,19 @@ var letterFirstэ = [ 'эвкалипт', 'эклер', 'эклипс', 'эко�
 var letterFirstю = [ 'юань', 'юбка', 'ювелирка', 'юла', 'юппи', 'юфта', 'юшка',];
 var letterFirstя = [ 'яблоко', 'явка', 'язык', 'язычок', 'яичница', 'яйцо', 'янтарь', 'ярлычок', 'ястреб',];
 var sendWord = [];
-var lastLetter = 'я';
+var lastLetter = '';
 
 function step() {
   var word = area.value;
-  console.log("word:" , word[0]);
-  console.log(word);
   
-  console.log(lastLetter);
-  console.log(word[0].includes(lastLetter));
-  if (lastLetter == word[0]) {
+  //if (lastLetter == "") {
+  if (lastLetter == word[0] || lastLetter == "") {
+    //else if (lastLetter == "") {
 
   //console.log(letterFirstа.includes(word) ==  previous[word]);
   if (letterFirstа.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -55,7 +53,7 @@ function step() {
   }
     else if (letterFirstб.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -63,7 +61,7 @@ function step() {
   }
     else if (letterFirstв.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -71,7 +69,7 @@ function step() {
   }
     else if (letterFirstг.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -79,7 +77,7 @@ function step() {
   }
     else if (letterFirstд.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -87,7 +85,7 @@ function step() {
   }
     else if (letterFirstе.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -95,7 +93,7 @@ function step() {
   }
     else if (letterFirstё.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -103,7 +101,7 @@ function step() {
   }
     else if (letterFirstж.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -111,7 +109,7 @@ function step() {
   }
     else if (letterFirstз.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -119,7 +117,7 @@ function step() {
   }
     else if (letterFirstи.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -127,7 +125,7 @@ function step() {
   }
     else if (letterFirstй.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -135,7 +133,7 @@ function step() {
   }
     else if (letterFirstк.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -143,7 +141,7 @@ function step() {
   }
     else if (letterFirstл.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -151,7 +149,7 @@ function step() {
   }
     else if (letterFirstм.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -159,7 +157,7 @@ function step() {
   }
     else if (letterFirstн.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -167,7 +165,7 @@ function step() {
   }
     else if (letterFirstо.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -175,7 +173,7 @@ function step() {
   }
     else if (letterFirstп.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -183,7 +181,7 @@ function step() {
   }
     else if (letterFirstр.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -191,7 +189,7 @@ function step() {
   }
     else if (letterFirstс.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -199,7 +197,7 @@ function step() {
   }
     else if (letterFirstт.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -207,7 +205,7 @@ function step() {
   }
     else if (letterFirstу.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -215,7 +213,7 @@ function step() {
   }
     else if (letterFirstф.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -223,7 +221,7 @@ function step() {
   }
     else if (letterFirstх.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -231,7 +229,7 @@ function step() {
   }
     else if (letterFirstц.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -239,7 +237,7 @@ function step() {
   }
     else if (letterFirstч.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -247,7 +245,7 @@ function step() {
   }
     else if (letterFirstш.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -255,7 +253,7 @@ function step() {
   }
     else if (letterFirstщ.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -263,7 +261,7 @@ function step() {
   }
     else if (letterFirstэ.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -271,7 +269,7 @@ function step() {
   }
     else if (letterFirstю.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -279,7 +277,7 @@ function step() {
   }
     else if (letterFirstя.includes(word)) {
   returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
+  previous.push(word);
   printLettersNum(word);
   area.placeholder = "мышь";
   area.value = "";
@@ -293,6 +291,7 @@ function step() {
   area.placeholder = "не та буква(";
 }
 }
+
 
 function printLettersNum(word) {
 monet += word.length;
@@ -349,6 +348,4 @@ document.querySelector('#stars').innerHTML = monet;
         alert('not a')
     }
 
-
-    leterFirstA += [,'анаша'];
 */

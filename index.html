@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.ico">
-  <title>Game of jar</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start game</title>
+  <link rel="shortcut-icon" href="image.ico">
 </head>
 <body>
-  <div class="up"></div>
-  <div id="stars">0</div>
-<div class="img"><img src="image.webp" class="banka" height="400px" alt="#"></div>
-Что влезет в 3 литровую банку? <input id="textplace" placeholder="мышь" pattern = "[a-z]" required>
-<button id="steps" onclick="step()">check</button>
-<div id="result"></div>
-<script src="full.js">
+  <a href="ukrWho.html" id="currentLang"><h1>Start game</h1></a>
+  <div class="lang"><select  name="language" id="lang">
+    <option id="langUkr" selected value="ukr">Українська мова</option>
+    <option id="langRus"  value="rus">Свинособачий язик</option>
+    <option  disabled value="eng">English Language</option></select>
+  </div>
+  <style>
+    body{
+      margin: 0;
+      background-image: url('jar.png');
+      background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    h1{
+      text-align: center;
+      vertical-align: center;
+      color: #fff;
+     margin-top: 20vh;
+    }
+    a{
+      text-decoration: none;
+    }
+    .lang{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-family: Helvetica, Arial, sans-serif;
+      text-decoration: dashed;
+    }
+    a:hover{
+      font-size: larger;text-transform: uppercase;
+    }
+  </style>
+  <script>
+  let lang = document.querySelector('#lang');
+  let indexLang = lang.selectedIndex;
+  let anchorLang = document.querySelector("#currentLang").href;
+  lang.addEventListener('change', () => {
+    let indexLang = lang.selectedIndex;
+    console.log(indexLang);
+    changeLang();
+  });
+  console.log(indexLang);
+  function changeLang() {
+    if (lang.selectedIndex === 0) {
+    console.log('ukrlangnow');
+    document.querySelector("#currentLang").href = 'ukrWho.html';
+  } else if (lang.selectedIndex === 1) {
+    console.log('ruslangnow');
+    document.querySelector("#currentLang").href = 'rus.html';
+  } else (console.log('anylang'))
+  
+}
 
-</script>
+console.log(document.querySelector("#currentLang").href);
+  </script>
 </body>
 </html>
