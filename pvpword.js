@@ -49,9 +49,10 @@ let stepСounter = 0;
   function handleKeyDown (event) {
     if (event.key === " ") {
       step();
+    //  if (area.value === ' ') {area.value = '';}
     } else if (event.key === "Enter") {
       step();
-    } 
+    }
   }
 
 function step() {
@@ -60,7 +61,7 @@ function step() {
   if(stepСounter === 3) {
     stepСounter = 1;
   }
-  
+
   if(letterFirstа.includes(word)) {
     writeWord(word);
     emptyField(word);
@@ -205,9 +206,9 @@ function writeWord(word) {
 }
 
 function emptyField(word) {
-  returnResult.innerHTML += word + "<br>";
-  previous += word + ",";
-  area.placeholder = "мышь";
+  previous.push(word);
+  returnResult.innerHTML = previous.reverse();
+  area.placeholder = "Є!)";
   area.value = "";
 }
 
@@ -219,4 +220,22 @@ function deletesValueArray(word, arrays) {
 function wrong(area) {
 area.value = "";
 area.placeholder = "Краще б пупкіна спробував би...";
+}
+
+function derivationStars() {
+  document.querySelector('#starsWords').style.left = 0;
+  document.querySelector('#starsWords').innerHTML = previous.reverse();
+  document.querySelector('#closeStars').style.display = 'block';
+}
+
+function derivationScores() {
+  document.querySelector('#scoresWords').style.right = 0;
+  document.querySelector('#scoresWords').innerHTML = previous.reverse();
+  document.querySelector('#closeStars').style.display = 'block';
+}
+
+function hideResult() {
+  document.querySelector('#closeStars').style.display = 'none';
+  document.querySelector('#starsWords').style.left = '-100%';
+  document.querySelector('#scoresWords').style.right = '-100%';
 }

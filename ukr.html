@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="favicon.ico">
+  <meta name="viewport" content="width=device, user-scalable=no">
   <title>Game of jar</title>
 </head>
 <body>
@@ -17,8 +18,11 @@
 <div class="flex2"><button id="steps"  onclick="step()">check</button></div></div>
 <!--<div class="img"><img src="image.webp" class="banka" height="400vw" alt="#"></div>-->
 <div id="result"></div>
-  <div onclick="derivationWords()" id="stars">0</div>
-  <div onclick="derivationWords()" id="scores">0</div>
+  <div onclick="derivationStars()" id="stars">0</div>
+  <div onclick="derivationScores()" id="scores">0</div>
+  <div id="starsWords"></div>
+  <div id="scoresWords"></div>
+  <div id="closeStars" onclick="hideResult()"></div>
 <footer id="footer">2023</footer>
 <script src="pvpword.js">
 </script>
