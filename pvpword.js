@@ -4,6 +4,8 @@ let area = document.querySelector('#textplace');
 let returnResult = document.querySelector("#result");
 let previous = [];
 let stepСounter = 0;
+let wordsFirstP = [];
+let wordsSecondP = [];
 
   // music
   function play() {
@@ -78,10 +80,6 @@ function step() {
     writeWord(word);
     emptyField(word);
     deletesValueArray(word, letterFirstг);
-  } else if (letterFirstд.includes(word)) {
-    writeWord(word);
-    emptyField(word);
-    deletesValueArray(word, letterFirstд);
   } else if (letterFirstд.includes(word)) {
     writeWord(word);
     emptyField(word);
@@ -198,9 +196,11 @@ function step() {
 function writeWord(word) {
   if (stepСounter === 1) {
   valuePlayer += word.length;
+  wordsFirstP.push(word);
   document.querySelector('#stars').innerHTML = valuePlayer;
   } else if (stepСounter === 2)  {
     valueSecondPlayer += word.length;
+    wordsSecondP.push(word);
     document.querySelector('#scores').innerHTML = valueSecondPlayer;
   } 
 }
@@ -224,13 +224,13 @@ area.placeholder = "Краще б пупкіна спробував би...";
 
 function derivationStars() {
   document.querySelector('#starsWords').style.left = 0;
-  document.querySelector('#starsWords').innerHTML = previous.reverse();
+  document.querySelector('#starsWords').innerHTML = wordsFirstP;
   document.querySelector('#closeStars').style.display = 'block';
 }
 
 function derivationScores() {
   document.querySelector('#scoresWords').style.right = 0;
-  document.querySelector('#scoresWords').innerHTML = previous.reverse();
+  document.querySelector('#scoresWords').innerHTML = wordsSecondP;
   document.querySelector('#closeStars').style.display = 'block';
 }
 

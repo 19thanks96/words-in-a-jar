@@ -260,7 +260,7 @@ function stepRobot(word, arrays) {
       }
     } else {
     console.log(robot);
-    returnResult.innerHTML += robot + "<br>";
+    returnResult.innerHTML +=  robot + "<br>";
     let numbWordRobot = arrays.indexOf(robot);
     arrays.splice(numbWordRobot, 1);
     valueRobot += robot.length;
