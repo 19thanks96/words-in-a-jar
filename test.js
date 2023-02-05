@@ -9,7 +9,7 @@ var letterFirstа = [  'атом', 'аура', 'афродизиак',];
 
 
 function step() {
-    var word = area.value;
+    var word = area.value.toLowerCase();
     var countElementsArr = letterFirstа. length;
     console. log(countElementsArr);
     //let index = letterFirstа.findIndex(el => el == word);

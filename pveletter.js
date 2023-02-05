@@ -57,7 +57,7 @@ let robotWord = [];
   }
 
 function step() {
-var word = area.value;
+var word = area.value.toLowerCase();
 if (lastLetter == word[0] || lastLetter == "") {
 if(letterFirstа.includes(word)) {
     writeWord(word);

@@ -56,7 +56,7 @@ let robotWord = [];
   }
 
 function step() {
-var word = area.value;
+var word = area.value.toLowerCase();
 if(letterFirstа.includes(word)) {
     writeWord(word);
     emptyField(word);

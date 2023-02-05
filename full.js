@@ -36,7 +36,7 @@ var sendWord = [];
 var lastLetter = '';
 
 function step() {
-  var word = area.value;
+  var word = area.value.toLowerCase();
   
   //if (lastLetter == "") {
   if (lastLetter == word[0] || lastLetter == "") {

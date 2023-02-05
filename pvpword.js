@@ -58,7 +58,7 @@ let wordsSecondP = [];
   }
 
 function step() {
-  var word = area.value;
+  var word = area.value.toLowerCase();
   stepСounter += 1;
   if(stepСounter === 3) {
     stepСounter = 1;
