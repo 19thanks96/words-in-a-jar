@@ -7,7 +7,7 @@
   <title>Game of jar</title>
 </head>
 <body>
-  <a href="/#/" class="back-button">
+  <a href="./ukrWho.html" class="back-button">
     <img class="back-button-icon" src="back-button-icon.png">
     </a>
   <button class="music" onclick="play()"><img id="sound" src="noSound.jpg" height="10vw" alt="#"></button>
@@ -15,7 +15,7 @@
   
 <div class="text">Що влізе у трьолітрову банку?</div> 
 <div class="flex"><div class="flex1"><input id="textplace" placeholder="мышь" pattern = "[a-z]" required></div>
-<div class="flex2"><button id="steps"  onclick="step()">check</button></div></div>
+<div class="flex2"><button id="tooltip" data-tooltip="Введіть слово яке поміститься<br> в тьолітрову банку" id="steps"  onclick="step()">check</button></div></div>
 <!--<div class="img"><img src="image.webp" class="banka" height="400vw" alt="#"></div>-->
 <div id="result"></div>
   <div onclick="derivationStars()" id="stars">0</div>
