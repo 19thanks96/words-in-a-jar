@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ukr">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <title>Game of jar</title>
+</head>
+<body>
+<a href="./index.html" class="back-button">
+    <img class="back-button-icon" src="back-button-icon.png">
+    </a>
+
+<div href="ukr.html" onclick="whoChecked()"  id="full__black">
+    <h2 class="preName">Выбери режим игры:</h2>
+      <h3  class="first__class">Игрок проти игрока.</h3>
+        <div><input id="one" type="radio" name="words" value="allWordsPvP">Все слова</input></div>
+        <div><input id="two" type="radio" name="words" value="onlyFirstLettersPvp">По первым буквам</input></div>
+      <br>
+      <h3 class="second__class">Игрок против бота.</h3>
+        <div><input id="three" type="radio" name="words" value="allWordsPvE">Все слова</input></div>
+        <div><input id="four" type="radio" name="words" value="onlyFirstLettersPve">По первым буквам</input></div>
+</div>
+<script>
+    let one = document.querySelector("#one");
+    let two = document.querySelector("#two");
+    let three = document.querySelector("#three");
+    let four = document.querySelector("#four");
+
+    function whoChecked() {
+    if(one.checked) {
+        window.open('ruspvpword.html','_self','');
+    } else if (two.checked) {
+        window.open('ruspvpletter.html','_self','');
+    } else if (three.checked) {
+        window.open('ruspveword.html','_self','');
+    } else if (four.checked) {
+        window.open('ruspveletter.html','_self','');
+    }
+}
+</script>
+</body>
+</html>

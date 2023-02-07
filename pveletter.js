@@ -230,6 +230,9 @@ function writeWord(word) {
 
 function checkLastWord(word) {
     lastLetter = word[word.length-1];
+    if (lastLetter === 'ь') {
+      lastLetter = word[word.length-2];
+    }
 }
 
 function emptyField(word) {
@@ -245,9 +248,9 @@ function deletesValueArray(word, arrays) {
 }
 
 function stepRobot(word, arrays) {
-    let lastFirstLetter = word[word.length-1];
-    let robot = arrRight.find(el => el.length < word.length+2);
+    let robot = words[lastLetter].find(el => el.length < word.length+2);
     robotWord.push(robot);
+    lastLetter = robot[robot.length-1];
       if (robot == undefined) {
         if (valueRobot > valuePlayer) {
           document.write("GAME OVeR" + "<br>" + 'Robot Wins');
