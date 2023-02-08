@@ -5,7 +5,7 @@
     ._touch .preName{
         color: green;
         font-size: 2rem;
-        margin: 50px 0 50px 0;
+        margin: 20px 0 20px 0;
     }
     
         
@@ -17,3 +17,41 @@
         color: green;
     }
   }
+
+  ._touch .music{
+    height: var(--font-size);
+    width: var(--font-size);
+}
+
+._touch .up{
+    height: 70px;
+}
+
+._touch .text{
+    font-size: 1.5rem;
+    left: 41vw;
+    margin-top: 0;
+}
+
+._touch footer{
+    padding: 20px;
+}
+
+._touch #stars,
+._touch #scores{
+    font-size: 1.5rem;
+}
+
+._touch #textplace{
+font-size: 1.5rem;
+} 
+
+._touch #tooltip{
+    font-size: 1.5rem;
+}
+
+._touch footer{
+    height: 15px;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}

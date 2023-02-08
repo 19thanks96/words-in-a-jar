@@ -34,7 +34,7 @@ a.back-button{
 
 ._touch input{
   color: #333;
-  margin: 10px 15px 10px 100px;
+  margin: 10px 15px 10px 50px;
 }
 
 
@@ -94,10 +94,6 @@ body{
   opacity: 0.9;
 }
 
-.flex1{}
-.flex2{
-  margin: 6.5px 0 0 0;
-}
 
 /*input{
   width: 60vw;
@@ -242,4 +238,42 @@ div > div{
   color: #333;
   background: #fff;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+
+
+._touch .music{
+  height: var(--font-size);
+  width: var(--font-size);
+}
+
+._touch .up{
+  height: 120px;
+}
+
+._touch .text{
+  font-size: 2rem;
+  left: 30vw;
+  margin-top: 25px;
+}
+
+._touch footer{
+  padding: 20px;
+}
+
+._touch #stars,
+._touch #scores{
+  font-size: 3.5rem;
+}
+
+._touch #textplace{
+font-size: 2.5rem;
+} 
+
+._touch #tooltip{
+  font-size: 2.5rem;
+}
+
+._touch footer{
+  height: 70px;
+  font-size: 2.5rem;
 }
