@@ -58,7 +58,7 @@ function handleKeyDown (event) {
 document.addEventListener("keydown", handleKeyDown);
 
 function step() {
-  let word = area.value;
+  var word = area.value.toLowerCase();
  
   //console.log(letterFirstа.includes(word) ==  previous[word]);
 if (letterFirstа.includes(word)) {
