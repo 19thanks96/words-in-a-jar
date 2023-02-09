@@ -1,3 +1,5 @@
+import {words} from './rusWords.js'
+
 let valuePlayer = 0;
 let valueSecondPlayer = 0;
 let area = document.querySelector('#textplace');
@@ -13,36 +15,7 @@ let wordsSecondP = [];
   audio.play();
   document.querySelector('#sound').src="sound.png";
   }
-let letterFirstа = [ 'абажур', 'абонемент', 'абрикос', 'авоська',  'агрегат', 'адамант', 'азбука', 'аист', 'аквамарин', 'акварель', 'аквариум', 'аккумулятор', 'аксессуар', 'алкоголь', 'алмаз', 'альбом', 'альманах', 'алюминий', 'амулет', 'амуниция', 'амфетамин', 'амфибия', 'ананас', 'анкета', 'апельсин', 'аппарат', 'аптечка', 'арбуз', 'аркан', 'арт-объект', 'артерия', 'артефакт', 'архив', 'астероид', 'асфальт', 'атом', 'аура', 'афродизиак', 'аэрозоль', ];
-let letterFirstб = [ 'бабло', 'бабочка', 'багаж', 'банан', 'баночка', 'баннер', 'барабан', 'батарейка', 'батарея', 'бейдж', 'белизна', 'белка', 'бензин', 'берет', 'бетон', 'Библия', 'бижутерия', 'билет', 'биография', 'бирка', 'бисер', 'бланк', 'блестки', 'блокнот', 'богатство', 'бокал', 'болт', 'бомба', 'Бор', 'ботинки', 'браслет', 'бревно', 'бриллиант', 'бровь', 'бронь', 'брошь', 'брошюра', 'брус', 'брызги', 'брюки', 'будильник', 'буква', 'букварь', 'букет', 'буклет', 'булка', 'булочка', 'булыжник', 'бумага', 'бумеранг', 'бусы', 'бутерброд', 'бутон', 'бутылка', 'бухло', 'бюджет', 'бюллетень', 'бюст', 'бюстгальтер'];
-let letterFirstв = [ 'вакцина', 'Вал', 'валюта', 'вектор', 'веревка', 'весы', 'ветка', 'вешалка', 'вещество', 'вещь', 'виза', 'вино', 'витамин', 'вихрь', 'вода', 'водка', 'воздух', 'волос', 'воробей', 'воронка', 'выделения', 'выигрыш', 'выпечка', 'выплата', 'вьюга', ];
-let letterFirstг = [ 'гаджет', 'гадюка', 'газировка', 'гайка', 'галантерея', 'галоши', 'галстук', 'галька', 'гамак', 'гамбургер', 'гарантия', 'гардина', 'гармонь', 'гарнитура', 'гашиш', 'гвоздика', 'гвоздь', 'гель', 'гель-смазка', 'герб', 'герметик', 'героин',  'гипс', 'гирлянда', 'глаз', 'глина', 'глист', 'глобус', 'глоток', 'глюкоза', 'гнездо', 'гниль', 'гном', 'голова', 'головастик', 'головка', 'головоломка', 'голограмма', 'голубь', 'горб', 'горелка', 'горло', 'горох', 'горошек', 'горсть', 'горшок', 'грааль', 'град', 'градусник', 'грамм', 'грамота', 'гранат', 'граната', 'гранд', 'гранит', 'грант', 'гранула', 'график', 'графика', 'графин', 'граффити', 'грач', 'гребень', 'грибница', 'гриб', 'грива', 'гривна', 'грим', 'гриф', 'гроздь', 'грош', 'груди', 'грудь', 'грунт', 'груша', 'грыжа', 'грызун', 'грязь', 'губа', 'губка', 'губы', 'гуль', 'гусеница', 'гуща'];
-let letterFirstд = [ 'дар', 'датчик', 'дело', 'деньги', 'депозит', 'деталь', 'детеныш', 'джем', 'джинсы', 'диплом', 'дисплей', 'дичь', 'дневник', 'ДНК', 'добыча', 'доза', 'документ', 'доллар', 'доход', 'древесина', 'дробь', 'дрова', 'дурь', 'дятел', ];
-let letterFirstе = [ 'Евангелие','евро','егерь','евровалюта','европакет','егермейстер','еда','ежевика','ежик','ежка','ежовник','елочка','енот','ерж','ерш','ершик','ехидна',];
-let letterFirstё = [ 'ёж-рыба', 'ёжик', 'ёла', 'ёлка', 'ёлочка', 'ёлчь', 'ёль', 'ёршик',];
-let letterFirstж = [ 'жаба', 'жаворонок', 'жакет', 'жалюзи', 'жар', 'жар-птица', 'жасмин', 'жвачка', 'жгут', 'жезл', 'желатин', 'железо', 'желудь', 'желудок', 'желчный', 'желчь', 'жемчуг', 'жемчужина', 'женьшень', 'жесть', 'жетон', 'живопись', 'животик', 'животное', 'живчик', 'жидкость', 'жижа', 'жила', 'жилет', 'жилетка', 'жир', 'жнива', 'жребий', 'жук', 'жук-навозник', 'жюльен', ];
-let letterFirstз = [ 'зад', 'зажигалка', 'зайчик', 'заколка', 'закорючка', 'закуска', 'замок', 'занавеска', 'занавес', 'заначка', 'заноза', 'запал', 'запах', 'записка', 'заплатка', 'заповедь', 'заправка', 'запястье', 'зараза', 'зарплата', 'зарядка', 'засов', 'заточка', 'зачетка', 'заяц', 'звезда', 'звено', 'звонок', 'зелень', 'зелье', 'зеница', 'зеркальце', 'зефир', 'змея', 'знамя', 'значок', 'зрачок', 'зуб', ];
-let letterFirstи = [ 'игла','иголка','игрушка','изделие','изумруд','Изюм','иконка','икра','имплант','иней','искра','испарение','исходник',];
-let letterFirstй = [ 'йо-йо','йогурт','йод','Йорк','йоркшир-терьер',];
-let letterFirstк = [ 'кабель', 'каблук', 'Камень', 'камера', 'короп', 'канат', 'кандалы', 'капитал', 'капля', 'капсула', 'капуста', 'капюшон', 'карандаш', 'карикатура', 'каркас', 'карман', 'карта', 'картинка', 'картофель', 'карточка', 'картошка', 'каталог', 'каша', 'кекс', 'кинжал', 'Кисть', 'клей', 'клеймо', 'клочок', 'ключ', 'книга', 'кнут', 'коврик', 'коготь', 'кожа', 'кокаин', 'колокольчик', 'колпак', 'кольцо', 'ком', 'комар', 'комикс', 'комок', 'компромат', 'конверт', 'конопля', 'конспект', 'конфета', 'концентрат', 'копия', 'кора', 'корень', 'корм', 'коробка', 'корона', 'коса', 'косарь', 'косметика', 'кость', 'костюм', 'косяк', 'кот', 'котенок', 'кошелек', 'краска', 'крем', 'крест', 'крестик', 'кристалл', 'кровь', 'кролик', 'кроссовок', 'крошка', 'кружева', 'крылья', 'крыса', 'крючок', 'кузнечик', 'кукла', 'кулак', 'Кулон', 'купальник', 'купон', 'купюра', 'Курица', 'куртка', 'кусок', 'куст', 'куш', ];
-let letterFirstл = [ 'ладан', 'ладонь', 'лампочка', 'лассо', 'ластик', 'ласточка', 'лебедка', 'лебедь', 'леденец', 'лемур', 'лепесток', 'лепешка', 'лещ', 'лещина', 'лимон', 'лимонад', 'линейка', 'линза', 'липучка', 'лист', 'листок', 'литр', 'лифчик', 'личинка', 'ловушка', 'лопатка', 'лосины', 'лосось', 'лосьон', 'лощина', 'лук', 'лягушка', 'лялька', ];
-let letterFirstм = [ 'магазин', 'магнит', 'мазь', 'майка', 'макароны', 'малина', 'мантия', 'марихуана', 'маска', 'масло', 'мед', 'медуза', 'мелочь', 'мембрана', 'менструация', 'мерило', 'мерка', 'мерч', 'мех', 'мешок', 'микроб', 'микрофон', 'мобильник', 'мозг', 'мозоль', 'молекула', 'моллюск', 'монета', 'морепродукт', 'морковка', 'мороженое', 'мотылек', 'мох', 'моча', 'мочалка', 'мошонка', 'мощи', 'мрамор', 'мука', 'мундир', 'муравейник', 'мурашка', 'муха', 'мыло', 'мышь', 'мякоть', 'мясо', 'мяч', ];
-let letterFirstн = [ 'набросок', 'нажива', 'наказ', 'налог', 'напиток', 'нарцисс', 'наследство', 'наушники', 'недра', 'нервы', 'нефть', 'нить', 'ништяк', 'нож', 'нос', 'нота', ];
-let letterFirstо = [ 'обед', 'оберег', 'обертка', 'облицовка', 'обломки', 'оболочка', 'обувь', 'овощ', 'одежда', 'оковы', 'окурок', 'оплата', 'опухоль', 'орган', 'орех', 'оружие', 'осадок', 'осколок', 'останки', 'отвар', 'откат', 'открытка', 'отрава', 'отходы', ];
-let letterFirstп = [ 'пакет', 'палец', 'палка', 'паразит', 'песок', 'пенал', 'пиво', 'писька', 'письмо', 'питание', 'питомец', 'пища', 'план', 'плата', 'платеж', 'плод', 'подарок', 'подделка', 'поделка', 'подушка', 'попа', 'почва', 'премия', 'препарат', 'протокол', 'птица', 'пыль', ];
-let letterFirstр = [ 'радиация','радио','разъем','ракушка','рама','рамен','рамка','расческа','реестр','резинка','рейдер','ремень','ржавчина','рог','родимка','роза','розетка','ромашка','роса','роутер','рубашка','рукопись','рукоятка','рулон','рыба','рюкзак','рюмка','рябина',];
-let letterFirstс = [ 'салют', 'сахар', 'светильник', 'стринги', 'соль', 'сироп', 'cвеча', 'сердце', 'серебро', 'сертификат', 'сигарета', 'сиська', 'слеза', 'словарь', 'смартфон', 'смесь', 'снег', 'снежинка', 'сок', 'cоль', 'сорняк', 'сосок', 'сосуд', 'статья', 'стих', 'cтрела', 'струя', 'стык', 'субсидия', 'сувенир', 'сумка', 'сфера', 'схема', 'счет', 'сюрприз', ];
-let letterFirstт = [ 'табак', 'таблетка', 'тайник', 'талисман', 'талон', 'тапки', 'таракан', 'тарелка', 'творог', 'телеграмма', 'телефон', 'тент', 'тень', 'терка', 'термометр', 'тест', 'тесто', 'тетрадь', 'тирамису', 'токсин', 'толстовка', 'топаз', 'топик', 'тост', 'тотем', 'трава', 'травка', 'трекер', 'трикотаж', 'трофей', 'трубка', 'трубочка', 'трусы', 'трутень', 'тряпка', 'тумблер', 'туфля', 'тюбик', 'тюльпан', ];
-let letterFirstу = [ 'уголь', 'ужин', 'узел', 'указ', 'уксус', 'улей', 'униформа', 'уста', 'устав', 'утка', 'ухо', 'учебник', 'уши', ];
-let letterFirstф = [ 'фаберже', 'фазан', 'файл', 'фаланга', 'фантик', 'фартук', 'фарфор', 'фарш', 'фасоль', 'фаст-фуд', 'фата', 'фекалии', 'фенечка', 'ферзь', 'феромон', 'фиалка', 'фигура', 'фигурка', 'фикус', 'филе', 'филин', 'финансы', 'финик', 'финка', 'фисташка', 'фишка', 'флейта', 'флешка', 'фолиант', 'фольга', 'фонарик', 'форель', 'фосфор', 'фотокарточка', 'фотопленка', 'фотоснимок', 'фреон', 'фрукт', 'фужер', 'фундук', 'футболка', ];
-let letterFirstх = [ 'хавка', 'хайлайтер', 'халва', 'хамелеон', 'харчок', 'хер', 'хиджаб', 'химикат', 'хинкали', 'хлам', 'хлеб', 'хлебцы', 'хлопушка', 'хлопья', 'хлороформ', 'хлыст', 'холка', 'хомячок', 'хрен', 'хром', 'хромосома', 'хронометр', 'хрусталь', 'худи', 'хурма', ];
-let letterFirstц = [ 'цветок', 'целлофан', 'целлюлит', 'цель', 'цемент', 'ценник', 'цент', 'цепочка', 'цианид', 'цибуля', 'цикада', 'цинк', 'циркуль', 'цитрус', 'циферблат', 'цоколь', 'цуцик', ];
-let letterFirstч = [ 'часть', 'часы', 'чача', 'чаша', 'чашечка', 'чашка', 'чебурек', 'чекушка', 'челюсть', 'чепчик', 'червь', 'червяк', 'черепашка', 'черешня', 'черника', 'чернила', 'чернильница', 'черновик', 'чернозем', 'чернослив', 'чертеж', 'чеснок', 'чешуя', 'чижик', 'чизбургер', 'чизкейк', 'чипсы', 'чрево', 'чресла', 'чулок', 'чучело', ];
-let letterFirstш = [ 'шагомер', 'шампанское', 'шампиньон', 'шампунь', 'шантаж', 'шапочка', 'шар', 'шарик', 'шарлотка', 'шарнир', 'шарф', 'шаурма', 'шашка', 'шашлык', 'шелк', 'шелковица', 'шелуха', 'шерсть', 'шершень', 'шестеренка', 'шишка', 'шлепанцы', 'шлепки', 'шмель', 'шницель', 'шнурок', 'шокер', 'шоколад', 'шпаргалка', 'шпилька', 'штаны', 'штатив', 'штекер', 'шторка', 'штукатурка', 'штык', ];
-let letterFirstщ = [ 'щебенка', 'щебень', 'щека', 'щелочь', 'щенок', 'щепка', 'щепотка', 'щербет', 'щипцы', 'щука', 'щупальце', 'щур', ];
-let letterFirstэ = [ 'эвкалипт', 'эклер', 'эклипс', 'экономка', 'экран', 'экскременты', 'экстракт', 'элексир', 'электрод', 'электрон', 'электрошокер', 'эмаль', 'эмблема', 'эмбрион', 'эмульсия', 'эндорфин', 'энергетик', 'эпинефрин', 'этикетка', 'эякуляция', ];
-let letterFirstю = [ 'юань', 'юбка', 'ювелирка', 'юла', 'юппи', 'юфта', 'юшка',];
-let letterFirstя = [ 'яблоко', 'явка', 'язык', 'язычок', 'яичница', 'яйцо', 'янтарь', 'ярлычок', 'ястреб',];
+
 let sendWord = [];
 var lastLetter = '';
 
@@ -67,155 +40,155 @@ function step() {
 
   if (lastLetter == word[0] || lastLetter == "") {
 
-if (letterFirstа.includes(word)) {
+if (words.а.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstа);
+  deletesValue(word, words.а);
   }
-    else if (letterFirstб.includes(word)) {
+    else if (words.б.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstб);
+  deletesValue(word, words.б);
   }
-    else if (letterFirstв.includes(word)) {
+    else if (words.в.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstв);
+  deletesValue(word, words.в);
   }
-    else if (letterFirstг.includes(word)) {
+    else if (words.г.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstг);
+  deletesValue(word, words.г);
   }
-    else if (letterFirstд.includes(word)) {
+    else if (words.д.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstд);
+  deletesValue(word, words.д);
   }
-    else if (letterFirstе.includes(word)) {
+    else if (words.е.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstе);
+  deletesValue(word, words.е);
   }
-    else if (letterFirstё.includes(word)) {
+    else if (words.ё.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstё);
+  deletesValue(word, words.ё);
   }
-    else if (letterFirstж.includes(word)) {
+    else if (words.ж.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstж);
+  deletesValue(word, words.ж);
   }
-    else if (letterFirstз.includes(word)) {
+    else if (words.з.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstз);
+  deletesValue(word, words.з);
   }
-    else if (letterFirstи.includes(word)) {
+    else if (words.и.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstи);
+  deletesValue(word, words.и);
   }
-    else if (letterFirstй.includes(word)) {
+    else if (words.й.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstй);
+  deletesValue(word, words.й);
   }
-    else if (letterFirstк.includes(word)) {
+    else if (words.к.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstк);
+  deletesValue(word, words.к);
   }
-    else if (letterFirstл.includes(word)) {
+    else if (words.л.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstл);
+  deletesValue(word, words.л);
   }
-    else if (letterFirstм.includes(word)) {
+    else if (words.м.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstм);
+  deletesValue(word, words.м);
   }
-    else if (letterFirstн.includes(word)) {
+    else if (words.н.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstн);
+  deletesValue(word, words.н);
   }
-    else if (letterFirstо.includes(word)) {
+    else if (words.о.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstо);
+  deletesValue(word, words.о);
   }
-    else if (letterFirstп.includes(word)) {
+    else if (words.п.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstп);
+  deletesValue(word, words.п);
   }
-    else if (letterFirstр.includes(word)) {
+    else if (words.р.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstр);
+  deletesValue(word, words.р);
   }
-    else if (letterFirstс.includes(word)) {
+    else if (words.с.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstс);
+  deletesValue(word, words.с);
   }
-    else if (letterFirstт.includes(word)) {
+    else if (words.т.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstт);
+  deletesValue(word, words.т);
   }
-    else if (letterFirstу.includes(word)) {
+    else if (words.у.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstу);
+  deletesValue(word, words.у);
   }
-    else if (letterFirstф.includes(word)) {
+    else if (words.ф.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstф);
+  deletesValue(word, words.ф);
   }
-    else if (letterFirstх.includes(word)) {
+    else if (words.х.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstх);
+  deletesValue(word, words.х);
   }
-    else if (letterFirstц.includes(word)) {
+    else if (words.ц.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstц);
+  deletesValue(word, words.ц);
   }
-    else if (letterFirstч.includes(word)) {
+    else if (words.ч.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstч);
+  deletesValue(word, words.ч);
   }
-    else if (letterFirstш.includes(word)) {
+    else if (words.ш.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstш);
+  deletesValue(word, words.ш);
   }
-    else if (letterFirstщ.includes(word)) {
+    else if (words.щ.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstщ);
+  deletesValue(word, words.щ);
   }
-    else if (letterFirstэ.includes(word)) {
+    else if (words.э.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstэ);
+  deletesValue(word, words.э);
   }
-    else if (letterFirstю.includes(word)) {
+    else if (words.ю.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstю);
+  deletesValue(word, words.ю);
   }
-    else if (letterFirstя.includes(word)) {
+    else if (words.я.includes(word)) {
   printLettersNum(word);
   emptyField(word);
-  deletesValue(word, letterFirstя);
+  deletesValue(word, words.я);
   }
   else {
   nope(area);
