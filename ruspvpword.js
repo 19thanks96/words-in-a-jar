@@ -1,20 +1,21 @@
 import {words} from './rusWords.js'
 
+let stepСounter = 0;
+let wordsFirstP = [];
+let wordsSecondP = [];
 let valuePlayer = 0;
-let valueRobot = 0;
+let valueSecondPlayer = 0;
 let area = document.querySelector('#textplace');
 let returnResult = document.querySelector("#result");
 let previous = [];
 
-function play() {
-let audio = new Audio('out.mp3');
-audio.play();
 
-document.querySelector('#sound').src="/sound.png";
-console.log(document.querySelector('#sound').src="sound.png");
-/*console.log(sounds.src.replace());
-sounds.src.replace('file://sound.png');*/
-}
+document.querySelector('.music').addEventListener('click', () => {
+  let audio = new Audio('out.mp3');
+  audio.play();
+  document.querySelector('#sound').src="sound.png";
+  });
+  
 
 let sendWord = [];
 
@@ -29,10 +30,14 @@ function handleKeyDown (event) {
   } 
 }
 document.addEventListener("keydown", handleKeyDown);
+document.querySelector('#tooltip').addEventListener('click', step);
 
 function step() {
   var word = area.value.toLowerCase();
- 
+  stepСounter += 1;
+  if(stepСounter === 3) {
+    stepСounter = 1;
+  }
   //console.log(words.а.includes(word) ==  previous[word]);
 if (words.а.includes(word)) {
   printLettersNum(word);
@@ -204,13 +209,36 @@ function emptyField(word) {
 }
 
 function printLettersNum(word) {
-console.log(word);
-valuePlayer += word.length;
-document.querySelector('#stars').innerHTML = valuePlayer;
-}
+  if (stepСounter === 1) {
+    valuePlayer += word.length;
+    wordsFirstP.push(word);
+    document.querySelector('#stars').innerHTML = valuePlayer;
+    } else if (stepСounter === 2)  {
+      valueSecondPlayer += word.length;
+      wordsSecondP.push(word);
+      document.querySelector('#scores').innerHTML = valueSecondPlayer;
+    } 
+  }
 
 function nope(area) {
 area.value = "";
 area.placeholder = "не влезло((";
 }
 
+document.querySelector('#stars').addEventListener('click' , () => {
+  document.querySelector('#starsWords').style.left = 0;
+  document.querySelector('#starsWords').innerHTML = wordsFirstP;
+  document.querySelector('#closeStars').style.display = 'block';
+});
+
+document.querySelector('#scores').addEventListener('click' , () => {
+  document.querySelector('#scoresWords').style.right = 0;
+  document.querySelector('#scoresWords').innerHTML = wordsSecondP;
+  document.querySelector('#closeStars').style.display = 'block';
+});
+
+document.querySelector('#closeStars').addEventListener('click' , () => {
+  document.querySelector('#closeStars').style.display = 'none';
+  document.querySelector('#starsWords').style.left = '-100%';
+  document.querySelector('#scoresWords').style.right = '-100%';
+});

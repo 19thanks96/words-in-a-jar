@@ -7,15 +7,12 @@ let returnResult = document.querySelector("#result");
 let previous = [];
 let robotWord = [];
 
-function play() {
-let audio = new Audio('out.mp3');
-audio.play();
-
-document.querySelector('#sound').src="/sound.png";
-console.log(document.querySelector('#sound').src="sound.png");
-/*console.log(sounds.src.replace());
-sounds.src.replace('file://sound.png');*/
-}
+document.querySelector('.music').addEventListener('click', () => {
+  let audio = new Audio('out.mp3');
+  audio.play();
+  document.querySelector('#sound').src="sound.png";
+  });
+  
 
 
 
@@ -32,7 +29,9 @@ function handleKeyDown (event) {
     step();
   } 
 }
+
 document.addEventListener("keydown", handleKeyDown);
+document.querySelector('#tooltip').addEventListener('click', step);
 
 function step() {
   var word = area.value.toLowerCase();
@@ -262,10 +261,10 @@ function printLettersNum(word) {
 }
 
 function checkLastWord(word) {
-    lastLetter = word[word.length-1];
-    if (lastLetter === 'ь') {
-      lastLetter = word[word.length-2];
-    }
+  lastLetter = word[word.length-1];
+  if (lastLetter === 'ь') {
+    lastLetter = word[word.length-2];
+  } 
 }
 
 function nope(area) {

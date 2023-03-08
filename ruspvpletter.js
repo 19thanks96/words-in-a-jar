@@ -10,12 +10,12 @@ let wordsFirstP = [];
 let wordsSecondP = [];
 
   // music
-  function play() {
-  let audio = new Audio('out.mp3');
-  audio.play();
-  document.querySelector('#sound').src="sound.png";
-  }
-
+  document.querySelector('.music').addEventListener('click', () => {
+    let audio = new Audio('out.mp3');
+    audio.play();
+    document.querySelector('#sound').src="sound.png";
+    });
+    
 let sendWord = [];
 var lastLetter = '';
 
@@ -29,6 +29,8 @@ var lastLetter = '';
       step();
     }
   }
+
+document.querySelector('#tooltip').addEventListener('click', step);
 
 function step() {
   var word = area.value.toLowerCase();
@@ -209,42 +211,44 @@ function printLettersNum(word) {
     } 
   }
 
-  function checkLastWord(word) {
-    lastLetter = word[word.length-1];
-  }
+function checkLastWord(word) {
+  lastLetter = word[word.length-1];
+  if (lastLetter === 'ь') {
+    lastLetter = word[word.length-2];
+  } 
+}
   
-  function emptyField(word) {
-    previous.push(word);
-    returnResult.innerHTML = previous.reverse();
-    area.placeholder = "Є!)";
-    area.value = "";
-  }
-  
-  function deletesValue(word, arrays) {
-    let valueArray = arrays.indexOf(word);
-    arrays.splice(valueArray, 1);
-  }
-  
-  function wrong(area) {
+function emptyField(word) {
+  previous.push(word);
+  returnResult.innerHTML = previous.reverse();
+  area.placeholder = "Є!)";
   area.value = "";
-  area.placeholder = "Краще б пупкіна спробував би...";
-  }
+}
   
-  function derivationStars() {
-    document.querySelector('#starsWords').style.left = 0;
-    document.querySelector('#starsWords').innerHTML = wordsFirstP;
-    document.querySelector('#closeStars').style.display = 'block';
-  }
-  
-  function derivationScores() {
-    document.querySelector('#scoresWords').style.right = 0;
-    document.querySelector('#scoresWords').innerHTML = wordsSecondP;
-    document.querySelector('#closeStars').style.display = 'block';
-  }
-  
-  function hideResult() {
-    document.querySelector('#closeStars').style.display = 'none';
-    document.querySelector('#starsWords').style.left = '-100%';
-    document.querySelector('#scoresWords').style.right = '-100%';
-  }
-  
+function deletesValue(word, arrays) {
+  let valueArray = arrays.indexOf(word);
+  arrays.splice(valueArray, 1);
+}
+
+function nope(area) {
+area.value = "";
+area.placeholder = "Краще б пупкіна спробував би...";
+}
+
+document.querySelector('#stars').addEventListener('click' , () => {
+  document.querySelector('#starsWords').style.left = 0;
+  document.querySelector('#starsWords').innerHTML = wordsFirstP;
+  document.querySelector('#closeStars').style.display = 'block';
+});
+
+document.querySelector('#scores').addEventListener('click' , () => {
+  document.querySelector('#scoresWords').style.right = 0;
+  document.querySelector('#scoresWords').innerHTML = wordsSecondP;
+  document.querySelector('#closeStars').style.display = 'block';
+});
+
+document.querySelector('#closeStars').addEventListener('click' , () => {
+  document.querySelector('#closeStars').style.display = 'none';
+  document.querySelector('#starsWords').style.left = '-100%';
+  document.querySelector('#scoresWords').style.right = '-100%';
+});

@@ -6,15 +6,12 @@ let area = document.querySelector('#textplace');
 let returnResult = document.querySelector("#result");
 let previous = [];
 
-function play() {
-let audio = new Audio('out.mp3');
-audio.play();
-
-document.querySelector('#sound').src="/sound.png";
-console.log(document.querySelector('#sound').src="sound.png");
-/*console.log(sounds.src.replace());
-sounds.src.replace('file://sound.png');*/
-}
+document.querySelector('.music').addEventListener('click', () => {
+  let audio = new Audio('out.mp3');
+  audio.play();
+  document.querySelector('#sound').src="sound.png";
+  });
+  
 
 let sendWord = [];
 
@@ -29,6 +26,7 @@ function handleKeyDown (event) {
   } 
 }
 document.addEventListener("keydown", handleKeyDown);
+document.querySelector('#tooltip').addEventListener('click', step);
 
 function step() {
   var word = area.value.toLowerCase();

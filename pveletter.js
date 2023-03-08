@@ -8,11 +8,11 @@ let previous = [];
 let robotWord = [];
 
   // music
-  function play() {
+  document.querySelector('.music').addEventListener('click', () => {
   let audio = new Audio('out.mp3');
   audio.play();
   document.querySelector('#sound').src="sound.png";
-  }
+  });
   
   var lastLetter = '';
 
@@ -27,6 +27,8 @@ let robotWord = [];
       step();
     }
   }
+
+  document.querySelector('#tooltip').addEventListener('click', step);
 
 function step() {
     var word = area.value.toLowerCase();
@@ -199,10 +201,10 @@ function writeWord(word) {
 }
 
 function checkLastWord(word) {
-    lastLetter = word[word.length-1];
-    if (lastLetter === 'ь') {
-      lastLetter = word[word.length-2];
-    }
+  lastLetter = word[word.length-1];
+  if (lastLetter === 'ь') {
+    lastLetter = word[word.length-2];
+  } 
 }
 
 function emptyField(word) {
@@ -243,23 +245,23 @@ area.value = "";
 area.placeholder = "Краще б пупкіна спробував би...";
 }
 
-function derivationStars() {
+document.querySelector('#stars').addEventListener('click' , () => {
   document.querySelector('#starsWords').style.left = 0;
   document.querySelector('#starsWords').innerHTML = previous;
   document.querySelector('#closeStars').style.display = 'block';
-}
+});
 
-function derivationScores() {
+document.querySelector('#scores').addEventListener('click' , () => {
   document.querySelector('#scoresWords').style.right = 0;
   document.querySelector('#scoresWords').innerHTML = robotWord;
   document.querySelector('#closeStars').style.display = 'block';
-}
+});
 
-function hideResult() {
+document.querySelector('#closeStars').addEventListener('click' , () => {
   document.querySelector('#closeStars').style.display = 'none';
   document.querySelector('#starsWords').style.left = '-100%';
   document.querySelector('#scoresWords').style.right = '-100%';
-}
+});
 
 let tooltipElem;
 
