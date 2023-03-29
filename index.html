@@ -8,7 +8,7 @@
   <title>Start game</title>
 </head>
 <body>
-  <a href="ukrWho.html" id="currentLang"><h1>Start game</h1></a>
+  <a href="ukrWho.html" id="currentLang"><h1><span></span>Start game</h1></a>
   <div class="lang"><select  name="language" id="lang">
     <option id="langUkr" selected value="ukr">Українська мова</option>
     <option id="langRus"  value="rus">Свинособачий язик</option>
@@ -22,16 +22,45 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    }
-    h1{
-      text-align: center;
-      vertical-align: center;
-      color: #fff;
-     margin-top: 20vh;
+    height: 100vh;
     }
     a{
-      text-decoration: none;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+h1{
+    position: relative;
+    width: 300px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    font-weight: bold;
+    background: transparent;
+    color: #000;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+span{
+    background: #3eff37;
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s ease-out;
+    cursor: pointer; 
+}
+
+h1:hover span{
+    width: 100%;
+}
+
     .lang{
       position: absolute;
       top: 10px;
@@ -39,9 +68,7 @@
       font-family: Helvetica, Arial, sans-serif;
       text-decoration: dashed;
     }
-    a:hover{
-      font-size: larger;text-transform: uppercase;
-    }
+    
   </style>
   <script>
   let lang = document.querySelector('#lang');
@@ -63,8 +90,27 @@
   } else (console.log('anylang'))
   
 }
+let object = {
+  teacher : 'big_boss',
+  say : 'ever',
+}
 
-console.log(document.querySelector("#currentLang").href);
+
+fetch('http://localhost:3000/hi', { 
+        method:'POST', 
+        body: JSON.stringify(object),
+        headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      },
+    })
+  function final(res) {
+    console.log(res)
+
+  }
+
+fetch('http://localhost:3000/end').then(response => response.json()).then(final)
+
   </script>
 </body>
 </html>
